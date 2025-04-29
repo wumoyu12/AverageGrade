@@ -7,7 +7,7 @@ def AskNum():
         AskGrade(int(howmany))
 
 def AskGrade(count):
-    gradelist = []
+    gradelist = []#Create a list
     gradesum = 0
     while count != 0:
         grade = str(input("Enter the grade"))
@@ -53,7 +53,7 @@ def CheckGrade(grade):
             print("Invalid character, please try again")
             return False
     
-    # Check value range
+    #Check grade range
     gradeNum = float(grade)
     if gradeNum < 0 or gradeNum > 100:
         print("Grade must be between 0 and 100, please try again")
