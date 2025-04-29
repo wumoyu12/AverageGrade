@@ -1,9 +1,9 @@
 def main():
-    AskNum() #Go to function Ask
+    AskNum()
 
 def AskNum():
-    howmany = str(input("How many grades you want to average?")) #Ask how many grades to average
-    if CheckNum(howmany): #Pass the variable to Checknum
+    howmany = str(input("How many grades you want to average?"))
+    if CheckNum(howmany):
         AskGrade(int(howmany))
 
 def AskGrade(count):
@@ -15,7 +15,6 @@ def AskGrade(count):
             gradelist.append(grade)
             count -= 1
     
-    # Calculate sum using for loop
     gradesum = 0
     for grade in gradelist:
         gradesum += grade
@@ -25,14 +24,14 @@ def AskGrade(count):
     return average
 
 def CheckNum(num):
-    numlen = len(num) #length of num
+    numlen = len(num)
     if numlen == 0:
         print("Invalid, please try again")
         AskNum()
         return False
     for i in range(0, numlen):
         ordnum = ord(num[i])
-        if ordnum < 48 or ordnum > 57:
+        if ordnum < 49 or ordnum > 57:
             print("Invalid, please try again")
             AskNum()
             return False
@@ -44,11 +43,11 @@ def CheckGrade(grade):
         print("Empty input, please try again")
         return False
     
-    # Check for decimal point
+    
     dotCount = 0
     for i in range(0, len(grade)):
         ordnum = ord(grade[i])
-        if ordnum == 46: # decimal point
+        if ordnum == 46:
             dotCount += 1
             if dotCount > 1:
                 print("Invalid number format, please try again")
@@ -57,7 +56,6 @@ def CheckGrade(grade):
             print("Invalid character, please try again")
             return False
     
-    # Check value range
     gradeNum = float(grade)
     if gradeNum < 0 or gradeNum > 100:
         print("Grade must be between 0 and 100, please try again")
